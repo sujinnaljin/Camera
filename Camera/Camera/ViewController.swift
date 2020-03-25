@@ -15,9 +15,37 @@ class ViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
 
     override func viewDidLoad() {
+        blurFace()
+    }
+    
+    func blurFace() {
+        let imageURL = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/sujin.JPG")
+        let inputImage = CIImage(contentsOf: imageURL)!
+    
+        guard let faceMaskCI = faceFilter(inputImage) else {
+            return
+        }
+        
+        guard let blurCI = blurFilter(inputImage, mask: faceMaskCI) else {
+            return
+        }
+        
+        let rect = calOriginRect(blurred: blurCI, origin: inputImage)
 
+        if let cgimg = context.createCGImage(blurCI, from: rect) {
+            self.imageView.image = UIImage(cgImage: cgimg)
+        }
     }
 
+    
+    func calOriginRect(blurred: CIImage, origin: CIImage) -> CGRect{
+        var rect = blurred.extent
+        let originalImage = origin.extent
+        rect.origin.x += (rect.size.width - originalImage.size.width) / 2
+        rect.origin.y += (rect.size.height - originalImage.size.height) / 2
+        rect.size = originalImage.size
+        return rect
+    }
 
     func faceFilter(_ image: CIImage) -> CIImage? {
         let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: nil)
