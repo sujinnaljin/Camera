@@ -15,6 +15,8 @@
 		3B295A382425FB3000569D0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B295A362425FB3000569D0B /* LaunchScreen.storyboard */; };
 		3B295A422426165500569D0B /* tacco.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B295A412426165500569D0B /* tacco.png */; };
 		3BA6ECDC242B0FDA007EEF1F /* sujin.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6ECDB242B0FDA007EEF1F /* sujin.JPG */; };
+		3BA6ECDE242B5F72007EEF1F /* HazeRemove.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 3BA6ECDD242B5F72007EEF1F /* HazeRemove.cikernel */; };
+		3BA6ECE0242B611F007EEF1F /* CustomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA6ECDF242B611F007EEF1F /* CustomFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3B295A392425FB3000569D0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B295A412426165500569D0B /* tacco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tacco.png; sourceTree = "<group>"; };
 		3BA6ECDB242B0FDA007EEF1F /* sujin.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sujin.JPG; sourceTree = "<group>"; };
+		3BA6ECDD242B5F72007EEF1F /* HazeRemove.cikernel */ = {isa = PBXFileReference; lastKnownFileType = text; path = HazeRemove.cikernel; sourceTree = "<group>"; };
+		3BA6ECDF242B611F007EEF1F /* CustomFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +69,12 @@
 				3B295A2B2425FB2F00569D0B /* AppDelegate.swift */,
 				3B295A2D2425FB2F00569D0B /* SceneDelegate.swift */,
 				3B295A2F2425FB2F00569D0B /* ViewController.swift */,
+				3BA6ECDF242B611F007EEF1F /* CustomFilter.swift */,
 				3B295A312425FB2F00569D0B /* Main.storyboard */,
 				3B295A342425FB3000569D0B /* Assets.xcassets */,
 				3B295A362425FB3000569D0B /* LaunchScreen.storyboard */,
 				3B295A392425FB3000569D0B /* Info.plist */,
+				3BA6ECDD242B5F72007EEF1F /* HazeRemove.cikernel */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA6ECDE242B5F72007EEF1F /* HazeRemove.cikernel in Resources */,
 				3B295A382425FB3000569D0B /* LaunchScreen.storyboard in Resources */,
 				3B295A352425FB3000569D0B /* Assets.xcassets in Resources */,
 				3BA6ECDC242B0FDA007EEF1F /* sujin.JPG in Resources */,
@@ -148,6 +155,7 @@
 			files = (
 				3B295A302425FB2F00569D0B /* ViewController.swift in Sources */,
 				3B295A2C2425FB2F00569D0B /* AppDelegate.swift in Sources */,
+				3BA6ECE0242B611F007EEF1F /* CustomFilter.swift in Sources */,
 				3B295A2E2425FB2F00569D0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

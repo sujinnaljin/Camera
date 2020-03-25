@@ -15,8 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
 
     override func viewDidLoad() {
-        blurFace()
+        CustomFiltersVendor.registerFilters()
+        customFilter()
     }
+    
+    func customFilter() {
+        let imageURL = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/sujin.JPG")
+        let inputImage = CIImage(contentsOf: imageURL)!
+        if let newImage = inputImage.filtered(.removeHaze) {
+            self.imageView.image = UIImage(ciImage: newImage)
+        } else {
+            print("없다")
+        }
+        
+
+    }
+    
     
     func blurFace() {
         let imageURL = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/sujin.JPG")
