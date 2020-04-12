@@ -15,6 +15,7 @@ class HazeRemoveFilter: CIFilter {
     @objc dynamic var inputColor: CIColor = CIColor.white
     @objc dynamic var inputDistance: NSNumber = 0.2
     @objc dynamic var inputSlope: NSNumber = 0
+    
     override var attributes: [String : Any] {
         return [
             kCIAttributeFilterDisplayName: "Remove Haze",

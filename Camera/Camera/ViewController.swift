@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         CustomFiltersVendor.registerFilters()
-        customFilter()
+        blurFace()
     }
     
     func customFilter() {
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
 
     }
     
+  
     
     func blurFace() {
         let imageURL = URL(fileURLWithPath: "\(Bundle.main.bundlePath)/sujin.JPG")
@@ -40,13 +41,14 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let blurCI = blurFilter(inputImage, mask: faceMaskCI) else {
+        guard let blurCI = blurFilter(inputImage, mask: faceMaskCI)?.cropped(to: inputImage.extent) else {
             return
         }
+      
         
-        let rect = calOriginRect(blurred: blurCI, origin: inputImage)
+       // let rect = calOriginRect(blurred: blurCI, origin: inputImage)
 
-        if let cgimg = context.createCGImage(blurCI, from: rect) {
+        if let cgimg = context.createCGImage(blurCI, from: inputImage.extent) {
             self.imageView.image = UIImage(cgImage: cgimg)
         }
     }
